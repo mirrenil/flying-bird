@@ -4,21 +4,23 @@ window.addEventListener('load', main);
 let imageElement;
 
 // State
-const speed = .6;
+const size = 40;
+const speed = 0.4;
 const position = {
 top: 0,
-left: 0,
+left: -size,
 }
 
 function main() {
     imageElement = document.querySelector('img');
+    imageElement.style.width = size + '%';
     setInterval(moveBird, 10);
 }
 
 function moveBird() {
     position.left += speed;
     if (position.left > 100) {
-        position.left = 20;
+        position.left = -size;
     }
     imageElement.style.left = position.left + '%';
 }
